@@ -10,7 +10,10 @@ export default class Countdown extends Component {
 
   componentDidMount(){
     this.callibrate(this.tick);
+  }
 
+  componentWillUnmount(){
+    clearInterval(this.i);
   }
 
   callibrate(func = () => {}){

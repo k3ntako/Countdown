@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
   namespace :api do
     namespace :v1 do
+      get 'events/all', to: 'events#all'
       resources :users do
         resources :events, only: [:index, :create, :show]
       end
@@ -11,5 +12,6 @@ Rails.application.routes.draw do
   end
 
   root 'homes#index'
+  get '/users/:user_id/events/new', to: 'homes#index'
   get '/users/:user_id/events/:event_id', to: 'homes#index'
 end

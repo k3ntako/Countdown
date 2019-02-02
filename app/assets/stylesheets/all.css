@@ -1,0 +1,27 @@
+body{
+  background-color: salmon;
+}
+
+nav.top-bar, nav.top-bar > ul{
+  background-color: #1c3448;
+}
+
+.site-title > a{
+  padding: 0;
+  font-weight: 800;
+  color: white;
+}
+
+ul.menu a{
+  color: white;
+}
+
+.site-title > a, ul.menu a:hover {
+  color: #aaa;
+}
+
+#app{
+  width: 90%;
+  margin: auto;
+  padding-top: 20px;
+}

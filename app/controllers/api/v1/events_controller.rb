@@ -1,6 +1,14 @@
 class Api::V1::EventsController < ApplicationController
   skip_before_action :verify_authenticity_token
 
+  def all
+    events = Event.order("created_at desc").limit(10)
+
+    render json: {
+      events: events
+    }
+  end
+
   def index
     events = Event.where(user)
     render json: {
