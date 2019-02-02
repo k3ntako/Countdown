@@ -23,6 +23,16 @@ class Api::V1::EventsController < ApplicationController
     end
   end
 
+  def show
+    user = event_show_params[:user_id]
+    url = event_show_params[:id]
+    event = Event.where("user_id = ? AND url = ?", user, url).first
+
+    render json: {
+      event: event
+    }
+  end
+
   private
 
   def user
@@ -35,5 +45,9 @@ class Api::V1::EventsController < ApplicationController
 
   def event_create_params
     params.permit(:name, :message, :url, :user_id)
+  end
+
+  def event_show_params
+    params.permit(:user_id, :id)
   end
 end

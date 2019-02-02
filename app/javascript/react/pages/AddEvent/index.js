@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
 import Flatpickr from 'react-flatpickr';
-import Event from './../../models/Event'
-export default class App extends Component {
+import Event from './../../../models/Event';
+
+export default class AddEvent extends Component {
   constructor(props){
     super(props);
     this.state = {
