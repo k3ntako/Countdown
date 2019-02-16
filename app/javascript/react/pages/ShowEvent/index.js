@@ -18,11 +18,20 @@ export default class ShowEvent extends Component {
   }
 
   renderEvent(event){
-    return <div>
-      <h1>Countdown to {event.name}!</h1>
-      <p>{event.message}</p>
-      <p>{formatDatetime(event.endDate)}</p>
-      <Countdown endDate={event.endDate} />
+    let message;
+    if(event.message){
+      message = <div className="message">{event.message}</div>
+    }
+
+    return <div className="event">
+      <div className="head">
+        <h1>Countdown to {event.name}!</h1>
+        <p>{formatDatetime(event.endDate)}</p>
+      </div>
+      <div className="bottom">
+        <Countdown endDate={event.endDate} />
+        {message}
+      </div>
     </div>
   }
 
@@ -30,12 +39,10 @@ export default class ShowEvent extends Component {
     let { event } = this.state;
 
     let eventHTML;
-    if(event){
-      eventHTML = this.renderEvent(event);
+    if(!event){
+      return <div></div>
     }
 
-    return <div>
-      {eventHTML}
-    </div>
+    return this.renderEvent(event);
   }
 }

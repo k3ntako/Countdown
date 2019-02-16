@@ -42,8 +42,10 @@ export default class AllEvents extends Component {
       eventsHTML = this.renderEvents(events)
     }
 
-    return <div className="grid-x grid-margin-x grid-margin-y">
-      {eventsHTML}
+    return <div className="blueBackground">
+      <div className="page grid-x grid-margin-x grid-margin-y">
+        {eventsHTML}
+      </div>
     </div>
   }
 }

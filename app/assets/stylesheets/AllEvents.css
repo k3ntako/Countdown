@@ -1,7 +1,8 @@
+/* Events */
 .eventCard{
-  background-color: rgba(255,255,255,0.8);
-  padding: 20px;
+  background-color: rgba(255,255,255,0.9);
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.5);
+  padding: 0.8rem 1.5rem;
   transition: 0.3s;
   color: #1c3448;
   height: 100%;
@@ -9,4 +10,54 @@
 
 .eventCard:hover {
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.5);
+}
+
+/* Event */
+.event{
+  padding-top: 4rem;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.head{
+  background-color: #32485a;
+  padding: 1rem;
+  color: white;
+}
+
+.event > p{
+  font-size: 1.5rem;
+}
+
+.bottom{
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+  align-items: center;
+}
+
+.countdown{
+  flex: 1;
+}
+
+.countdown > h1{
+  width: 100%;
+  text-align: center;
+  font-size: 5rem;
+}
+
+.message{
+  align-self:stretch;
+  width: 34%;
+  background-color: #dedede;
+  font-size: 1.5rem;
+  padding: 1rem 1.5rem;
+}
+
+/* New */
+.newForm{
+  background-color: rgba(255,255,255);
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.5);
+  padding: 1.5rem 1.5rem 2.5rem 1.5rem;
 }

@@ -36,7 +36,6 @@ export default class Countdown extends Component {
   tick(){
     this.i = setInterval(() => {
       let { secondsRounded } = this.state;
-      console.log("1");
 
       if(secondsRounded > 0){
         this.setState({ secondsRounded: --secondsRounded })
@@ -53,12 +52,22 @@ export default class Countdown extends Component {
     let { endDate } = this.props;
     if(endDate < new Date()){
       clearInterval(this.i)
-      return <h1>Done!</h1>
+      return <div className="countdown">
+        <h1 className="countdown">0 days</h1>
+        <h1 className="countdown">0 hours</h1>
+        <h1 className="countdown">0 mins</h1>
+        <h1 className="countdown">0 secs</h1>
+      </div>
+
     }
 
     let { daysRounded, hoursRounded, minutesRounded, secondsRounded } = this.state;
 
-
-    return <h1>{ `${daysRounded} days ${hoursRounded} hours ${minutesRounded} mins ${secondsRounded} secs` }</h1>
+    return <div className="countdown">
+      <h1>{daysRounded} days</h1>
+      <h1>{hoursRounded} hours</h1>
+      <h1>{minutesRounded} mins</h1>
+      <h1>{secondsRounded} secs</h1>
+    </div>
   }
 }

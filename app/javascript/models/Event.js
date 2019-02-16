@@ -1,9 +1,6 @@
 class Event  {
 
   constructor( props ){
-    console.log(props);
-    // const params = props.event
-
     this.id = props.id;
     this.name = props.name;
     this.message = props.message;
@@ -23,14 +20,13 @@ class Event  {
   static create(name, end_date, message, url){
     let data = { name, end_date, message, url }
 
-    fetch('/api/v1/users/1/events', {
+    return fetch('/api/v1/users/1/events', {
       method: 'POST',
       body: JSON.stringify(data),
       headers:{
         'Content-Type': 'application/json'
       }
     }).then(res => res.json())
-    .then(response => console.log('Success:', JSON.stringify(response)))
     .catch(error => console.error('Error:', error));
   }
 

@@ -14,6 +14,11 @@
       <li class="site-title">
         <a href="/">Countdown</a>
       </li>
+      <%- if current_user -%>
+        <li>
+          <a href="/users/<%= current_user.id %>/events/new">Create</a>
+        </li>
+      <%- end -%>
     </ul>
 
     <ul class="menu align-right">

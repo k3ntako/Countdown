@@ -1,9 +1,30 @@
-body{
-  background-color: salmon;
+@import url('https://fonts.googleapis.com/css?family=Amaranth|Julius+Sans+One');
+
+html, body{
+  font-family: 'Julius Sans One', sans-serif;
+  height: 100%;
+  margin: 0;
+}
+
+nav.top-bar{
+  position:absolute;
+  width: 100%;
+  height: 4rem;
 }
 
 nav.top-bar, nav.top-bar > ul{
+  font-family: 'Julius Sans One', sans-serif;
   background-color: #1c3448;
+  z-index: 1;
+}
+
+.flash{
+  width: 100%;
+  text-align: center;
+  padding: 0.5rem;
+  color: white;
+  background-color: rgba(34, 139, 34, 0.9);
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.5);
 }
 
 .site-title > a{
@@ -21,7 +42,25 @@ ul.menu a{
 }
 
 #app{
+  height: 100vh;
+}
+
+.page {
   width: 90%;
-  margin: auto;
-  padding-top: 20px;
+  max-width: 1000px;
+  margin: auto !important;
+  padding: 4rem 0;
+}
+
+.blueBackground{
+  background: linear-gradient(to right, #00B4DB, #0083B0);
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  width: 100%;
+  overflow: auto;
+}
+
+.errorMessage{
+  color: red;
 }
