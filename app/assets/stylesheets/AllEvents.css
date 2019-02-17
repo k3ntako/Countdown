@@ -57,7 +57,7 @@
 
 /* New */
 .newForm{
-  background-color: rgba(255,255,255);
+  background-color: rgba(255,255,255, 1);
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.5);
   padding: 1.5rem 1.5rem 2.5rem 1.5rem;
 }
