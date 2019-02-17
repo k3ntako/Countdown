@@ -53,10 +53,10 @@ export default class Countdown extends Component {
     if(endDate < new Date()){
       clearInterval(this.i)
       return <div className="countdown">
-        <h1 className="countdown">0 days</h1>
-        <h1 className="countdown">0 hours</h1>
-        <h1 className="countdown">0 mins</h1>
-        <h1 className="countdown">0 secs</h1>
+        <h1>0 days</h1>
+        <h1>0 hours</h1>
+        <h1>0 mins</h1>
+        <h1>0 secs</h1>
       </div>
 
     }

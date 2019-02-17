@@ -34,7 +34,16 @@ class Api::V1::EventsController < ApplicationController
   def show
     user = event_show_params[:user_id]
     url = event_show_params[:id]
-    event = Event.where("user_id = ? AND url = ?", user, url).first
+    event = Event.find_by("user_id = ? AND url = ?", user, url)
+
+    render json: {
+      event: event
+    }
+  end
+
+  def globalShow
+    url = event_global_show_params[:event_url]
+    event = Event.find_by(url: url)
 
     render json: {
       event: event
@@ -57,5 +66,9 @@ class Api::V1::EventsController < ApplicationController
 
   def event_show_params
     params.permit(:user_id, :id)
+  end
+
+  def event_global_show_params
+    params.permit(:event_url)
   end
 end

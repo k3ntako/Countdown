@@ -10,11 +10,12 @@ export default class ShowEvent extends Component {
   }
 
   componentDidMount(){
-    let { user_id, event_url } = this.props.match.params;
+    let { userId, eventUrl } = this.props.match.params;
 
-    Event.find(user_id, event_url).then(event => {
+    Event.find(eventUrl, userId).then(event => {
       this.setState({ event });
     })
+
   }
 
   renderEvent(event){

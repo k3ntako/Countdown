@@ -30,8 +30,14 @@ class Event  {
     .catch(error => console.error('Error:', error));
   }
 
-  static find(userId, eventUrl){
-    return fetch(`/api/v1/users/${userId}/events/${eventUrl}`, {
+  static find(eventUrl, userId = null){
+    let link = `/api/v1/events/${eventUrl}`;
+
+    if(userId){
+      link = `/api/v1/users/${userId}/events/${eventUrl}`;
+    }
+    
+    return fetch(link, {
       method: 'GET'
     }).then(res => res.json())
     .then(res => new Event(res.event))

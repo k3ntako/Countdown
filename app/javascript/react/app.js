@@ -10,8 +10,9 @@ const App = () => {
     <BrowserRouter>
       <Switch>
         <Route path='/' exact component={AllEvents} />
-        <Route path='/users/:user_id/events/new' exact component={AddEvent} />
-        <Route path='/users/:user_id/events/:event_url' component={ShowEvent} />
+        <Route path='/users/:userId/events/new' exact component={AddEvent} />
+        <Route path='/users/:userId/events/:eventUrl' component={ShowEvent} />
+        <Route path='/:eventUrl' component={ShowEvent} />
       </Switch>
     </BrowserRouter>
   )

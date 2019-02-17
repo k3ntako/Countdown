@@ -23,7 +23,7 @@ export default class AllEvents extends Component {
 
       return <Link
         key={event.id}
-        to={`/users/${event.userId}/events/${event.url}`}
+        to={`/${event.url}`}
         className="cell medium-6 small-12"
         >
         <div className="eventCard">
